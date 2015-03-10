@@ -1,0 +1,24 @@
+SYSTEM REQUIREMENTS
+
+ * Apache webserver with mod_rewrite and .htaccess file support enabled
+ * PHP 5 with PDO and SQLite driver enabled
+
+INSTALLATION
+
+ 1. Load up the script files to your server
+ 2. Depending on your server configuration you may need to change the write
+    permissions of the following subdirectories:
+        * cms/cache (CHMOD 777) - cache directory, needs to be writable if
+          you want to use the caching feature
+        * media and images (CHMOD 777) - need to be writable if you want to
+          use the file uploader
+ 3. Ready! You should now be able to access the index page by browsing to the
+    address you uploaded RiteCMS (e.g.http://your-domain.tld/path/to/phpsqlitecms/). 
+    To administrate the page, go to http://your-domain.tld/path/to/ritecms/cms/. 
+    The default admin userdata is: username: admin, password: admin.
+    
+SECURITY
+1. Please change your password asap.
+2. To avoid XSS attack, please change the token in CMS/index.php Line 27 (or else if you change the file)
+define('TOKEN_SALT', 'monkey');
+Change 'monkey' to anything else.

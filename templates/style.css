@@ -1,0 +1,215 @@
+body                          {font-family:verdana,arial,sans-serif; font-size:100.01%; margin:0; padding:0; background:#fff; /*min-width:45em;*/}
+h1                            {margin:0 0 1em 0; padding:0; font-size:1.5em; font-weight:bold;}
+h2                            {margin:1.5em 0 1em 0; font-size:1em; font-weight:bold;}
+
+#admin                        {margin:0; padding:7px 10px; background:#ffffe1; border-bottom:1px solid #c0c0c0;}
+#admin p.left                 {font-size:0.9em; margin:0; padding:0; float:left; }
+#admin p.right                {font-size:0.9em; margin:0; padding:0; text-align:right;}
+#admin a                      {text-decoration:none;}
+#admin a:hover span           {text-decoration:underline;}
+#admin a img                  {margin:0 5px -3px 0; padding:0;}
+
+#top,#nav,#subnav,#main,#bottom  
+                                {max-width:58em; margin-left:auto; margin-right:auto; padding:0;}
+
+#topwrapper                   {padding:0 30px; border-bottom:1px solid #bacbdf;}
+#top                          {position:relative; height:4em; padding:0;}
+#top .logo                    {margin:0; padding:0.7em 0 0 0; float:left; color:#000080;}
+#top .subtitle                {margin:0; padding:0.9em 0 0 0; text-align:right; font-size:1.1em; font-weight:normal;}
+#top h1                       {margin:0; padding:0; font-size:2em; color:#000080;}
+#top h1 a                     {color:#000080; text-decoration:none;}
+#top h1 a:hover               {color:#00a;}
+
+#navwrapper                   {margin:0; padding:0; border-bottom:1px solid #bacbdf; background:#000080;}
+#nav                          {padding:0 30px ;}
+#nav ul                    {margin:0; padding:0; list-style-type:none;}
+#nav li                   {display:inline-block; padding:0;}
+#nav li a                    {padding:0.5em 0.8em;display:block;}
+#nav li a:link,
+#nav li a:visited            {color:#fff;font-variant:small-caps;}
+#nav li a:link#current,
+#nav li a:visited#current    {font-weight:bold;}
+#nav li a:hover,
+#nav li a:hover#current      {background:#006; text-decoration:none;}
+
+#nav li ul      {background:#006;display:none;position:absolute;width:200px;z-index:100;padding:.2em .5em;font-size:.9em;}
+#nav li:hover ul,
+#nav li li  {display:block;}
+#nav li:hover li a    {background:transparent;}
+#nav li ul a        {display:block;padding:0.5em 0.8em;;}
+#nav li ul a:hover,
+#nav li ul li:hover a {background:#690;color:#fff;text-decoration:none;}  
+
+#mainwrapper                  {margin:0; padding:0 32px 50px 32px; background:#fff;}
+#sidebarwrapper               {width:100%; float:left; margin-right:-16em;}
+
+#content                      {margin:0; padding:30px 0 0 0; max-width:43em;}
+#sidebarwrapper #content      {margin:0 16em 50px 0;}
+
+#content #category            {float:right; text-align:right; padding:0; font-size:0.82em; color:#808080;}
+#content #breadcrumbs         {position:relative; top:-1.3em; margin:0; padding:0 0 0.5em 0; font-size:0.75em;}
+#content #pageinfo            {position:relative; top:-0.5em; margin:0; padding:0 0 1em 0; font-size:0.9em;}
+#content #time                {position:relative; top:-0.5em; margin:0; padding:0 0 1em 0; font-size:0.9em;}
+#content p,
+#content ul,
+#content ol,
+#content dl                   {font-size:0.9em; line-height:1.6em; margin-top:0;}
+#content ul ul,
+#content ol ol,
+#content ol ul,
+#content dl dl                {font-size:1em;}
+#content dt                   {font-weight:bold;}
+#content dd                   {padding:0.25em 0 0.5em 0;}
+#content h2.teaser            {margin:0; font-size:0.9em; line-height:1.6em; font-weight:bold; color:#000; text-decoration:none;}
+#content h2.teaser a          {margin:0; font-size:1em; font-weight:bold; color:#000; text-decoration:none;}
+#content p.teaser             {margin:0; padding:0;}
+
+#content div.news             {margin:0 0 25px 0; padding:0;}
+#content div.news p.time      {margin:0 0 5px 0; padding:0; font-size:0.75em;}
+#content div.news h2          {margin:0 0 5px 0; font-weight:bold; color:#000;}
+#content div.news h2 a        {margin:0; color:#000; text-decoration:none;}
+#content div.news h2 a:hover  {color:#00c; text-decoration:none;}
+#content div.news h2 .category
+                              {font-size:0.82em; font-weight:normal; color:#808080;}
+#content div.news h2 .category a
+                              {color:#808080;}   
+#content div.news p           {margin:0; padding:0;}
+#content div.news p.link      {margin:3px 0 0 0; padding:0;}
+#content div.news a.comments  {font-size:0.83em; color:#808080;}
+
+#sidebar                      {float:right; margin:30px 0; padding:0; width:14em; color:#000; background:transparent;}
+
+.sidebarbox                   {margin:0; padding:0; color:#000; background:#fbfbfb; border:1px solid #d2ddea;}
+.sidebarbox h3                {margin:0; padding:2px 10px; font-size:0.9em; line-height:1.6em; background:#ebeffa url(images/bg_th.png) repeat-x top;}
+.sidebarbox p                 {margin:10px 0 0 0; padding:0 10px 10px 10px; font-size:0.9em; line-height:1.6em;}
+.subbox                       {margin-top:30px;}
+
+#sidebar ul                   {margin:7px 0; padding:0; font-size:0.9em;}
+#sidebar li                   {list-style:none; margin:0;}
+#sidebar li a                 {margin:0; padding:4px 0 4px 7px; display:block;}
+#sidebar li a:hover           {text-decoration:none; background:#efefef;}
+
+#search p                     {}
+#searchfield                  {width:12em;}
+
+table.teaser                  {}
+td.scl                        {width:50%; padding-right:10px; padding-bottom:25px; vertical-align:top;}
+td.scr                        {width:50%; padding-left:10px; padding-bottom:25px; vertical-align:top;}
+
+#bottomwrapper                {clear:both; margin:0; padding:0 30px 0 30px; background:#f7f7f7; border-top:1px solid #bacbdf; background-image:url(images/bg_subnav_2.png); background-repeat:repeat-x;}
+#bottom                       {color:#000;}
+#bottom p.left                {margin:0; padding:0.5em 0 0.8em 0; float:left; font-size:0.75em;}
+#bottom p.right               {margin:0; padding:0.5em 0 0.8em 0; text-align:right; font-size:0.75em; font-weight:normal;}
+
+#poweredby                    {position:relative; top:-0.8em; margin:0; padding:0; text-align:center; font-size:0.75em; color:#808080;}
+#poweredby a                  {color:#808080; text-decoration:none;}
+
+.thumbtable                   {}
+.thumbtable td                {vertical-align:top; padding:0 25px 20px 0;}
+.thumbtable td.last           {padding-right:0;}
+
+.thumbtable td p              {text-align:center; margin:0; padding:2px 0 0 0; font-size:0.8em !important; line-height:1.2em !important;}
+.thumbtable td p.title        {margin:0; padding:0; float:left; text-align:left;}
+.thumbtable td p.comments     {margin:0; padding:0; float:right; text-align:right;}
+
+.below                        {margin-top:20px;}
+
+ul.spaced li                  {margin-bottom:0.9em;}
+ul.spaced ul li               {margin-bottom:0;}
+
+.info                         {font-size:0.75em !important; line-height:1.19em; border:1px solid red; padding:5px;}
+
+.small                        {font-size:0.75em !important; line-height:1.19em;}
+.smallx                       {font-size:0.75em !important; line-height:1.19em; color:#808080; }
+span.small, span.smallx       {font-size:0.9em !important;}
+
+.sep                          {margin:20px 0 10px 0; padding:0; height:1px; font-size:1px; width:200px; border-bottom:1px dotted #c0c0c0;}
+a.close-category              {display:inline-block; width:13px; height:13px; background:url(images/close_category.png) no-repeat;}
+a.close-category span         {display:none;}
+code                          {font-family:"courier new",courier; color:#009;}
+
+#comments                     {margin:50px 0 0 0;}
+#comments h3                  {font-size:1em; margin:0 0 20px 0; padding:0 0 2px 0; border-bottom:1px dotted #c0c0c0;}
+#comments div.comment         {margin:0 0 20px 0; padding:0 0 0 2em; background:url(images/quote.png) no-repeat 0 5px;}
+#comments p.author            {margin:0 0 3px 0; padding:0; font-style:italic;}
+#comments p.text              {margin:0; padding:0;}
+#comments p.admin             {margin:0; padding:3px 0 0 0; font-size:0.75em !important;}
+#comments #preview            {margin:0; font-size:0.9em; color:red; font-weight:bold;}
+#comments div.preview         {margin:0 0 20px 0; padding:10px; border:1px dotted red;}
+#commentform                  {margin:0; padding:0;}
+#show_commentform             {display:none;}
+a.addcomment                  {font-size:0.9em; padding:0 0 0 21px; background:url(images/comment_add.png) no-repeat left;}
+#pingbacks                    {margin-top:50px !important;}
+#pingback-list                {font-size:0.82em !important; margin:0 0 0 2em; padding:0 0 0 2em;}
+#pingback-list li             {margin:0; padding:0;}
+#comments #closed             {margin-top:30px !important; font-size:0.82em !important; color:#808080;}
+#comments #close              {margin-top:30px !important; font-size:0.82em;}
+a.closecomments               {font-size:0.9em; padding:0 0 0 21px; background:url(images/lock.png) no-repeat left;}
+a.opencomments                {font-size:0.9em; padding:0 0 0 21px; background:url(images/lock_open.png) no-repeat left;}
+
+
+p.pagination                  {font-size:0.82em !important;}
+p.pagination .current         {color:red;}
+ul.pagination                 {margin:50px 0 0 0 !important; padding:0; list-style-type:none; font-size:0.9em;}
+ul.pagination li              {display:inline; font-size:0.9em; margin-right:0.7em;}
+ul.pagination a,
+ul.pagination span       {border:1px solid #bacbdf; background:#f9f9f9; padding:1px 6px;}
+ul.pagination a:hover    {border:1px solid #00c; background:#efefef; text-decoration:none;}
+ul.pagination .current   {border:1px solid #bacbdf; color:red; font-weight:bold;}
+
+input.edit_button             {font-size:0.75em; width:5em;}
+input.delete_button           {font-size:0.75em; width:5em; color:red;}
+
+.caution                      {padding:0 0 0 20px; color:red; font-weight:bold; background-image:url(images/caution.png); background-repeat:no-repeat; background-position:left;}
+.ok                           {padding:0 0 0 20px; font-weight:bold; color:red; background-image:url(images/tick.png); background-repeat:no-repeat; background-position:left;}
+
+img                           {border:0;}
+img.float-left                {float:left; margin:3px 10px 10px 0; border:1px solid black;}
+img.float-right               {float:right; margin:0 0 13px 13px; border:1px solid black; z-index:10;}
+img.teaser                    {float:left; margin:5px 10px 10px 0; border:1px solid black;}
+img.thumbnail                 {border:1px solid black; margin:0;}
+img.float-left-sm             {float:left; margin:3px 5px 3px 0; border:1px solid black;}
+
+table.normaltab               {width:100%; border:1px solid #c5e5c3; font-size:0.9em; line-height:1.6em; background:#fff;}
+table.normaltab th            {vertical-align:top; font-weight:bold; text-align:left; color:#000; background:#ebeffa url(images/bg_th.png) repeat-x bottom;}
+table.normaltab tr.odd td     {vertical-align:top; font-weight:normal; color:#000; background:#f5f5f5;}
+table.normaltab tr.even td    {vertical-align:top; font-weight:normal; color:#000; background:#f9f9f9;}
+
+a:link                        {color:#00c; text-decoration:none;}
+a:visited                     {color:#00c; text-decoration:none;}
+a:hover                       {color:#00c; text-decoration:underline;}
+a:active                      {}
+
+img.thumbnail:link            {color:#00f; border:1px solid #000;}
+img.thumbnail:visited         {color:#00f; border:1px solid #000;}
+img.thumbnail:hover           {color:#00f; border:1px dashed #000;}
+img.thumbnail:active          {}
+
+a.extern                      {padding-left:13px; background:url(images/external_link.png) no-repeat left;}
+/*a.comments                  {padding-left:13px; background:url(images/comments.png) no-repeat left;}*/
+a.rss                         {padding-left:16px; background:url(images/rss.png) no-repeat left;}
+a.download                    {padding-left:20px; background:url(images/download.png) no-repeat left;}
+
+a.icon                        {text-decoration:none;}
+a.icon:hover span             {text-decoration:underline;}
+a.icon img                    {margin:0 5px -3px 0; padding:0;}
+a.additem                     {padding-left:20px; background:url(images/add_item.png) no-repeat left;}
+
+/* lightbox (delete if not required):*/
+#mylightbox-background        {display:none; position:fixed; _position:absolute; /* hack for internet explorer 6*/ height:100%; width:100%; top:0; left:0; background:#000; border:1px solid #cecece; z-index:1;}
+#mylightbox                   {width:400px; display:none; position:absolute; background:#fff; z-index:2; padding:3px 10px 0 10px; font-size:13px; border:1px solid #cecece; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+#mylightbox-header            {height:20px; font-size:13px; line-height:20px; padding:0 0 3px 0;}
+#mylightbox-title             {position:absolute; top:2px; left:10px; width:40%; margin:0; padding:0; font-weight:bold;}
+#mylightbox-nav               {position:absolute; top:4px; left:40%; width:20%; margin:0; padding:0; text-align:center; float:left;}
+#mylightbox-controls          {position:absolute; top:4px; right:10px; width:16px; margin:0; padding:0; text-align:right;}
+#mylightbox #photo            {margin:0; padding:0;}
+#mylightbox-description       {font-size:13px; line-height:19px; margin:0; padding:3px 0 8px 0;}
+#mylightbox-throbber          {width:32px; height:32px; margin:0 auto 0 auto; padding:100px 0; background:url(images/throbber.gif) no-repeat center;}
+#mylightbox-prev              {display:inline-block; width:16px; height:16px; margin:0; padding:0; background:url(images/previous.png) no-repeat top left;}
+#mylightbox-prev:hover        {opacity:0.75;}
+#mylightbox-next              {display:inline-block; width:16px; height:16px; margin:0; padding:0; background:url(images/next.png) no-repeat top left;}
+#mylightbox-next:hover        {opacity:0.75;}
+#mylightbox-close             {display:block; width:16px; height:16px; margin:0; padding:0; background:url(images/close.png) no-repeat;}
+#mylightbox-close:hover       {opacity:0.75;}
+#mylightbox-prev span, #mylightbox-close span, #mylightbox-next span
+                              {display:none;}

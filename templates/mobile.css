@@ -1,0 +1,134 @@
+body                          {font-family:verdana,arial,sans-serif;font-size:100.01%;margin:0px;padding:0px;background:#fff;/*min-width:45em;*/ }
+h1                            {padding:.11em;margin:0;font-size:1.7em;}
+h2                            {font-size:1.5em;}
+
+#top,#nav,#subnav,#main,
+#bottom                       {max-width:22em;margin-left:auto;margin-right:auto;padding:0;}
+
+#topwrapper                   {}
+#top                          {}
+#top .logo                    {color:#000080;}
+
+#navwrapper                   {}
+#nav                          {}
+#navlist                      {margin:0;padding:0;list-style-type:none;font-size:0.9em;}
+#navlist li                   {display:inline;padding:0;display:inline-block;}
+#navlist a                    {padding:0.1em 0.2em;}
+#navlist a:link,
+#navlist a:visited            {}
+#navlist a:link#current,
+#navlist a:visited#current    {font-weight:bold;}
+#navlist a:hover,
+#navlist a:hover#current      {background:#efefef;text-decoration:none;}
+
+#mainwrapper                  {background:#fff;}
+#sidebarwrapper               {}
+
+#content                      {margin:0;padding:.2em 0 0 0;max-width:22em;}
+#sidebarwrapper #content      {}
+
+#content p,
+#content ul,
+#content ol,
+#content dl                   {font-size:0.9em;line-height:1.3em;margin-top:0;}
+#content ul ul,
+#content ol ol,
+#content ol ul,
+#content dl dl                {font-size:1em;}
+#content dt                   {font-weight:bold;}
+#content dd                   {padding:0.25em 0;}
+#content h2.teaser            {font-size:0.9em;line-height:1.6em;text-decoration:none;}
+#content h2.teaser a          {font-size:1em;text-decoration:none;}
+#content p.teaser             {}
+
+#content div.news             {}
+#content div.news p.time      {}
+#content div.news h2          {font-weight:bold;color:#000;}
+#content div.news h2 a        {margin:0;color:#000;text-decoration:none;}
+#content div.news h2 a:hover  {color:#0000cc;text-decoration:none;}
+#content div.news h2 .category
+                              {font-size:0.82em;font-weight:normal;color:#808080;}
+#content div.news h2 .category a
+                              {color:#808080;}   
+#content div.news p           {}
+#content div.news p.link      {}
+#content div.news a.comments  {font-size:0.83em;color:#808080;}
+
+#sidebar                      {}
+
+.sidebarbox                   {}
+.sidebarbox h3                {}
+.sidebarbox p                 {}
+.subbox                       {}
+
+#sidebar ul                   {}
+#sidebar li                   {}
+#sidebar li a                 {}
+#sidebar li a:hover           {}
+
+#search p                     {}
+#searchfield                  {width:13em;}
+
+table.teaser                  {}
+td.scl                        {width:50%;padding-right:10px;padding-bottom:25px;vertical-align:top;}
+td.scr                        {width:50%;padding-left:10px;padding-bottom:25px;vertical-align:top;}
+
+#bottomwrapper                {clear:both;margin:0px auto;padding:0px;background:#f7f7f7;border-top:1px solid #bacbdf;max-width:22em;}
+#bottom                       {color:#000;}
+#bottom p.left                {font-size:0.75em;}
+#bottom p.right               {font-size:0.75em;}
+
+#poweredby                    {position:relative;top:-0.8em;margin:0;padding:0;text-align:center;font-size:0.75em;color:#808080;}
+#poweredby a                  {color:#808080;text-decoration:none;}
+
+.thumbtable                   {}
+.thumbtable td                {vertical-align:top;padding:0 25px 20px 0;}
+.thumbtable td.last           {padding-right:0;}
+
+.thumbtable td p              {text-align:center;margin:0;padding:2px 0 0 0;font-size:0.8em !important;line-height:1.2em !important;}
+.thumbtable td p.title        {margin:0;padding:0;float:left;text-align:left;}
+.thumbtable td p.comments     {margin:0;padding:0;float:right;text-align:right;}
+
+.below                        {margin-top:20px;}
+
+ul.spaced li                  {margin-bottom:0.9em;}
+ul.spaced ul li               {margin-bottom:0;}
+
+.info                         {font-size:0.75em !important;line-height:1.19em;border:1px solid red;padding:5px;}
+
+.small                        {font-size:0.75em !important;line-height:1.19em;}
+.smallx                       {font-size:0.75em !important;line-height:1.19em;color:#808080;}
+span.small, span.smallx       {font-size:0.9em !important;}
+
+.sep                          {margin:20px 0px 10px 0px;padding:0px;height:1px;font-size:1px;width:200px;border-bottom:1px dotted #c0c0c0;}
+a.close-category              {display:inline-block;width:13px;height:13px;background:url(images/close_category.png) no-repeat;}
+a.close-category span         {display:none;}
+code                          {font-family:"courier new",courier;color:#000099;}
+
+p.pagination                  {font-size:0.82em !important;}
+p.pagination .current         {color:red;}
+ul.pagination                 {margin:50px 0 0 0 !important;padding:0;list-style-type:none;font-size:0.9em;}
+ul.pagination li              {display:inline;font-size:0.9em;margin-right:0.7em;}
+
+ul.pagination a,
+ul.pagination span       {border:1px solid #bacbdf;background:#f9f9f9;padding:1px 6px;}
+ul.pagination a:hover    {border:1px solid #0000cc;background:#efefef;text-decoration:none;}
+ul.pagination .current   {border:1px solid #bacbdf;color:red;font-weight:bold;}
+
+
+.caution                      {padding:0px 0px 0px 20px;color:red;font-weight:bold;background-image:url(images/caution.png);background-repeat:no-repeat;background-position:left;}
+.ok                           {padding:0;color:red;background-image:url(images/tick.png);background-repeat:no-repeat;background-position:left;}
+
+img                           {border:0px;}
+img.float-left img.float-right    {}
+img.teaser                    {float:left;margin:5px 10px 10px 0px;border:1px solid black;}
+img.thumbnail                 {border:1px solid black;margin:0px;}
+img.float-left-sm             {float:left;margin:3px 5px 3px 0px;border:1px solid black;}
+
+
+a:link                        {color:#0000cc;text-decoration:none;}
+a:visited                     {color:#0000cc;text-decoration:none;}
+a:hover                       {color:#0000cc;text-decoration:underline;}
+a:active                      {}
+
+

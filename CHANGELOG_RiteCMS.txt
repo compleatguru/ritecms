@@ -1,0 +1,273 @@
+///////////////////////////////////////////////////
+////////   CuteCMS Modification log        ////////
+////////   Modified by H. Zhuang           ////////
+////////   Version 2.0 based on PSC 2.0.4  ////////
+///////////////////////////////////////////////////
+
+█ 2015.01.08
+● added mobile template function
+-added template_mobile varchar(255) NOT NULL default '',in rite_pages
+-added $lang['edit_template_mobile_marking'] =  'Template_mobile:';in admin lanaguages
+-added lines 295-305 in admin edit.inc.tpl subtemplate
+-added line 244 $template_mobile_file=$data['template_mobile']; in cms content.inc.php
+-added line 58 added template_mobile
+		line 101 $page_data['template_mobile'] = htmlspecialchars($data['template_mobile']);
+		in edit.inc.php
+-added variable in get_content in functions.inc.php
+█ 2013.10.10
+● Security update - XSS attack patch - admin function token_pass(), user:php and tpl updates.
+█ 2013.10.06
+● Added backup function
+█ 2013.10.02
+● Added inline_style function and added fields inline_style in pages table (edit.inc.php,edit.inc.tpl,*.admin.lang.php)
+● updated tinymce (main.tpl,get_content function)
+█ 2013.08.14
+------------
+● Added QRCode supportL:function in cms/include/functions.content.php
+● Added reCaptcha support
+        -settings 5 variables: recaptcha, recaptcha_comment_check, recaptcha_key_private, recaptcha_key_public, recaptcha_mail_check
+        -cms/includes/spam_protection.inc.php,templates/subtemplates/spam_protection.inc.tpl
+        -cms/includes/pages_types/formmailer.php, add private key
+        -cms/includes/comments.inc.php
+        -templates/subtemplates/comments.inc.tpl
+------------------------------------------------------------------
+● added submenu in menus for pull-down submenu: files touched
+        -data/content: added column 'submenu'
+        -cms/includes/functions.inc.php line 127.143, added 'submenu'
+        -cms/includes/menus.inc.php,line 75,83,92,98,233,245,262,273: add 'submenu'
+        -cms/lang/English.admin.lang.php and other lang files,line 198:$lang['menu_item_submenu']='Submenu';
+        -templates/admin/subtemplates/menu_edit.inc.php,line 20,34,46,56, add 'submenu'
+------------------------------------------------------------------
+● added sidebars_all and default only show 1 sidebar
+        in 'templates/admin/subtemplates/edit.inc.tpl'
+        line 114     <?php if(isset($sidebars_all) && $sidebars_all==1):
+         line 127 endif
+------------------------------------------------------------------
+● cleaned all CMS files with # comments
+------------------------------------------------------------------
+● added sort by include_order first, similar to sticky
+        /cms/includes/classes/News.class.php
+        Line 65 & 71, change ORDER BY time DESC to ORDER BY include_order ASC,time DESC
+------------------------------------------------------------------
+● moved 'data/' folder to root
+------------------------------------------------------------------
+● changed all data table prefix from 'phpsqlitecms_' to 'rite_'
+------------------------------------------------------------------
+● updated to be compatible with tinymce 4.0.3, deleted two redundant JS files. template/admin/main.tpl
+------------------------------------------------------------------
+● optimized style.css.
+
+████Version 1 updates below ████
+
+█ 2011.05.19
+------------
+● added pagination in Page overview
+   //--Added admin_articles_per_page->20 in settings
+   // in '/cms/includes/pages.inc.php'
+    + line 89
+    $app=isset($settings['admin_articles_per_page']) ? $settings['admin_articles_per_page'] : 20 ;
+    $cpage=isset($_GET['cpage'])?($_GET['cpage']-1) : 0;
+    $articles=$cpage*$app;
+    -+ line 117
+    $dbr = Database::$content->query("SELECT id, page, author, title, time, last_modified, last_modified_by, status, views, edit_permission, edit_permission_general FROM ".Database::$db_settings['pages_table']." ORDER BY ".$order." ".$descasc." limit $articles ,$app");
++ line 118
+   $totalarticles = Database::$content->query("SELECT count(*) FROM ".Database::$db_settings['pages_table']);
+   $totalarticles=$totalarticles->fetch();
+   $template->assign('totalarticles',$totalarticles[0]);
+   $template->assign('app',$app);
+   $template->assign('cpage',$cpage);
+   // in '/templates/admin/subtemplates/pages.inc.tpl'
+    line 6 7 8 9 11
+    Insert cpage=<?php echo $cpage;?>&amp; after "<a href="index.php?mode=pages&amp;"
+    line 33
+    <tr><td><?php echo 'Total articles:'.$totalarticles;?></td><td colspan="4"><?php 
+    $tpp=ceil($totalarticles/$app)+1;
+    for ($pp=1;$pp<$tpp;$pp++){echo '<a href="index.php?mode=pages&amp;cpage='.$pp.'">&nbsp;['.$pp.']&nbsp;</a>';}
+    ?></td><td colspan="2"><?php print_r($cpage);?></td></tr>
+------------------------------------------------------------------
+● index.php line 90, ":" will cause security problem in windows server
+  define('CATEGORY_IDENTIFIER', 'CATEGORY:');
+  changed to
+  define('CATEGORY_IDENTIFIER', 'tags_');
+------------------------------------------------------------------
+● added three files in /templates/
+        mobile.tpl
+        mobile.css
+        .htacccess
+------------------------------------------------------------------
+● added mobile feature
+        /index.php
+        line 44
+/* uncomment the following line if you want to have automatic mobile web */
+        if(isset($_GET['mobile'])) {$mobile=true;} else {$mobile=false;}
+        line 156
+/* uncomment the following line if you want to have automatic mobile web */
+        if($mobile && ($settings['mobile']=="yes")) $template_file="mobile.tpl";
+------------------------------------------------------------------
+● added parameter in settings table
+        Mobile->yes
+------------------------------------------------------------------
+● Changed root .htaccess file, for mobile feature
+        #RewriteBase /
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_URI} !.*\.(m|print)$
+        RewriteRule ^(.*)$ index.php?qs=$1 [L]
+        RewriteCond %{REQUEST_URI} ^(.*)\.(m|print)$
+        RewriteRule ^(.*)\.(m)$ index.php?qs=$1&mobile=true [L]
+------------------------------------------------------------------
+● added Options -MultiViews so that index doesn't interfere with index.php
+        in order to have a file named INDEX, you have to turn MultiView Off.
+        in index.php line 78, base_path underdefine. should move to lower.
+------------------------------------------------------------------
+● all files have been re-saved as utf-8 format.
+------------------------------------------------------------------
+● fixed back slash problem in windows environment
+        in cms/includes/functions, replaced 
+	    dirname($_SERVER['PHP_SELF'])
+            with 
+	    rtrim(dirname($_SERVER['PHP_SELF']), '/.\\') 
+------------------------------------------------------------------
+● added $type_addition variable
+        in cms/includes/content.inc.php line 58 added the following to be used in subtemplates
+        $type_addition = trim($data['type_addition']);
+        $template->assign('type_addition', $type_addition);
+------------------------------------------------------------------
+● added custom news/overview subtemplate feature
+in templates/subtemplates/news.inc.tpl and overview.inc.tpl added the following
+if(isset($type_addition)&&strlen($type_addition)>1){
+	$incl="news.".$type_addition.".inc.tpl";
+	@include $incl;
+}
+else{include "news.default.inc.tpl";}
+Original files have been renamed to news.inc.default.tpl and overview.default.tpl respectively.
+-----------------------------------------------------------------
+● Added Two Chinese language files in cms/lang/
+-----------------------------------------------------------------
+● Deleted most demo pages in content.sqlite
+-----------------------------------------------------------------
+● Added TinyMCE
+-----------------------------------------------------------------
+
+
+
+************************************************
+*************phpSQLiteCMS changelog*************
+************************************************
+
+Version 2.0.4 (2010-03-18)
+--------------------------------
+- minor global content block bug fixed
+- content functions bug fixed
+
+Version 2.0.3 (2010-03-17)
+--------------------------------
+- filemanager improvemets
+- lightbox improvements (browser back button support)
+- French language files added
+
+Version 2.0.2 (2010-07-01)
+--------------------------------
+- Bugfixes, pingbacks implemented, lightbox implemented
+
+Version 2.0.1 (2010-06-17)
+--------------------------------
+- Fixed JavaScript bug in menu administration
+
+Version 2.0 (2010-06-04)
+--------------------------------
+- New page type "Simple news"
+- Flowplayer can be used to play *.flv films now
+- gzip compression for cache files 
+
+Version 2.0 beta 2 (2010-??-??)
+--------------------------------
+- closing comments for commentable pages possible now (enter a value into the
+  page type addition field to close comments, e.g. 'closed')
+- cached pages send a HTTP_IF_MODIFIED_SINCE header now
+
+Version 2.0 beta 1 (2009-09-17)
+--------------------------------
+- minor bugfixs
+
+Version 2.0 alpha 4 (2009-06-22)
+--------------------------------
+- bugfix: http://phpsqlitecms.mylittlehomepage.net/bugtracker/view.php?id=4
+
+Version 2.0 alpha 3 (2009-06-03)
+--------------------------------
+- fixed bug concerning the Akismet spam protection
+- revised comment administration
+
+Version 2.0 alpha 2 (2009-05-31)
+--------------------------------
+- possibility to use TinyMCE as WYSIWYG editor implemented
+- fixed incorrect links in pages with page names containing slashes
+
+Version 2.0 alpha 1 (2009-05-28)
+--------------------------------
+- code completely revised
+- phpSQLiteCMS now uses PDO as database interface
+- Smarty isn't used anymore
+
+Version 1.0 (2008-12-25)
+------------------------
+- photo galleries can display *.swf films now (*.flv with JW FLV Player plugin)
+- edit permissions for users implemented
+- updated Smarty (version 2.6.22)
+
+Version 1 RC2 (2008-04-20)
+--------------------------
+- fixed bug in slideshow: http://phpsqlitecms.net/forum/index.php?id=12
+
+Version 1 RC1 (2008-03-26)
+--------------------------
+- caching feature implemented
+- update to Smarty 2.6.19
+- other minor changes
+
+Beta 0.9 (2007-09)
+------------------
+- UTF-8 support
+- update to Smarty 2.6.18
+
+Beta 0.8 (2007-02)
+------------------
+- modifications of global content blocks, notes and comments
+
+Beta 0.7 (2007-01)
+------------------
+- new page type: newsletter subscription
+- new page type: site search
+
+Beta 0.6 (2006-11)
+------------------
+- Bad Behavior and Akismet spam protection integrated
+- update to Smarty 2.6.16
+
+Beta 0.5
+--------
+- structural changes in the admin area
+- blocking of user agents
+- update to Smarty 2.6.14
+
+Beta 0.4
+--------
+- menus and notes can now be included for each page individually
+
+Beta 0.3
+--------
+- update to Smarty 2.6.10
+- possibility to block IPs
+- image uploader improved (images can be resized and compressed now)
+- some structural changes (changed subdirectories: data for the SQLite
+  files, images for images, files for files like HTML files or
+  download files)
+
+Beta 0.2
+--------
+- new comment management in the admin area
+
+Beta 0.1
+--------
+- first release
